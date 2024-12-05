@@ -1,0 +1,32 @@
+
+<div class="w-full py-2 flex fixed top-0 left-0 right-0 bg-[#31343e] z-10 shadow-md">
+  <!-- Page Logo -->
+
+  <a routerLink="/">
+    <img src="../../../assets/image/logo.png" alt="Logo" class="h-8  mx-4">
+    
+  </a>
+  <!-- Filename -->
+  <span class="text-white flex-1">
+    {{this.roomName}}
+  </span>
+
+
+  
+  <button *ngIf="canShare" (click)="openShareModal()" class="border border-gray-400 hover:border-gray-200 text-white font-bold py-1 px-4 rounded-md flex items-center">
+    <span class="mr-1">Chia sẻ</span>
+  
+  </button>
+
+  <!-- User name -->
+  <button *ngIf="!isLogin" (click)="navToAuth()" class="border mx-2 border-gray-400 hover:border-gray-200 text-white font-bold py-1 px-4 rounded-md flex items-center">
+    <span class="mr-1">Đăng nhập</span>
+    
+  </button>
+
+  <button *ngIf="isLogin" (click)="logout()" class="border mx-2 border-gray-400 hover:border-gray-200 text-white font-bold py-1 px-4 rounded-md flex items-center">
+    <span class="mr-1">Đăng xuất</span>
+    
+  </button>
+  <!-- <span class="text-white ml-4">kien nguyen</span> -->
+</div>
