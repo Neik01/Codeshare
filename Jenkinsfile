@@ -47,7 +47,7 @@ pipeline {
             steps {
                withDockerRegistry([credentialsId:'dockerhub',url:'']){
 
-                sh 'docker build -t ${DOCKER_USERNAME}/${FRONTEND_IMAGE}:latest frontend'
+                sh 'docker build -t ${DOCKER_USERNAME}/${FRONTEND_IMAGE}:latest compiler-online-app'
                 sh 'docker build -t ${DOCKER_USERNAME}/${BACKEND_IMAGE}:latest Backend'
               
                 sh 'docker push ${DOCKER_USERNAME}/${FRONTEND_IMAGE}:latest'
